@@ -1,0 +1,4 @@
+# Exclude the data directory
+data/
+*.zip
+*.json
