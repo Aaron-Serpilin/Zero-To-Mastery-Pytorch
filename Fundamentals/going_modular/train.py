@@ -26,7 +26,7 @@ data_transform = transforms.Compose([
   transforms.ToTensor()
 ])
 
-if __name__ == '__main__':
+if __name__ == '__main__': # When num_workers > 0, the multiprocessing module can encounter issues by spawning worker processes. Wrapping it in this guard provides a clear entry point to avoid re-importing the module and leading to errors. 
   # DataLoaders with help from data_setup.py
   train_dataloader, test_dataloader, class_names = data_setup.create_dataloaders(
       train_dir=train_dir,
